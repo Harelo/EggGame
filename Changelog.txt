@@ -1,0 +1,193 @@
+EGG (C) - VERSION'S INFORMATION
+-------------------------------
+
+===============================
+
+Version 1.0.0.0:
+First version of the game.
+
+===============================
+
+Version 1.0.0.1:
++Added colors when earning points, clicks countdown and when earning eggs.
++Fixed a bug when the egg randomly changed its colors.
++Added a shop with purchaseable items.
++Fixed a bug when you couldn't start a new egg when finished the current egg.
++Changed the look of the egg.
+
+===============================	
+
+Version 1.0.0.2:
++Changed the background color.
++Changed the look of the shop.
++Added purchased item's list and disabled the auto-activate of items when they were purchased.
+
+===============================
+
+Version 1.0.0.3:
++Changed the background color again.
++Added a new system so you can't activate an item if another item is allready activated.
++Fixed a bug when pressing the 'Activate' button made more than one item dissapear.
++Changed the amount of points you get when opening an egg from 1000 to 100,000.
++Added bonuses when getting to 10, 100 and 1000 eggs ([10]250,000 [100]500,000 [1000]1,000,000)
++Added a golden color when earning bonuses.
++Fixed a grammer mistake on the shop (Crack one egg was typed as "Crack one agg")
++Fixed a bug when "Clicks left" presented a negative number.
+
+===============================
+
+Version 1.0.0.4:
++Changed the button's colors and style.
++Changed the button's places (Now placed beneath the shop and the inventory).
++Changed the size and the color of the text.
++Fixed a bug when "Clicks count" was changed to zero when reaching 2 on "Clicks count".
++Fixed a bug where the golden color didn't show up when earning bonuses.
++Fixed a bug where the lime color didn't show up when earning bonuses from cracking
+eggs.
+
+===============================
+
+Version 1.0.0.5:
++Added ranks.
++Added clicks count that counts clicks left until rank up.
++Added points's bonuses gained when getting promoted.
++Added a shop item "Buy 1000 XP".
++Redesigned the site.
++Changed the egg's look, to an actual egg.
+
+===============================
+
+Version 1.0.0.6 (Some fixes to 1.0.0.5):
++Changed the shop item "Buy 1000 XP" to "XP".
++You can now buy any amount of XP you want, and not only 1000.
++Added a system to check if the amount of XP you want to buy is smaller or equal to the
+XP left for a rank up.
++Fixed a bug when you couldn't get to the CrackingGod rank.
+
+===============================
+
+Version 1.0.0.7:
++Fixed a bug when you could enter a negative number when purchasing XP.
++Fixed a bug when trying to buy XP caused a lose of money and not change in XP.
++Transfered the script to another file (EggData.js).
++Changed the price of 1XP from 10 points to 5 points.
+
+===============================
+
+Version 1.0.0.8:
++Added alerts when getting a promotion.
++Added an alert when cracking an egg.
++Redsigned the shop and added colors.
+
+===============================
+
+Version 1.0.0.9:
++Added help page.
++Added about page.
+
+===============================
+
+Version 1.0.1.0:
++Changed the item list system, now if you allready have an item from the same kind, the
+amount of it just increases and it's not duplicating itself.
+
+===============================
+
+Version 1.0.1.1:
++Added more ranks.
++Disabled mouse's right click.
+
+===============================
+
+Version 1.0.1.2:
++Changed the bonus of points when cracking 10, 100 and 1000 eggs.
++Re-aranged the folders of the game and backups.
++Added a README.txt file.
++Added the game's logo (Egg (C) - the Egg game!).
+
+===============================
+
+Version 1.0.1.3:
++Added stats, which shows how many XP you earned, how many points you earned
+and how many times you clicked the egg.
++Re-designed the site a little bit.
++Updated the Egg.exe file, which I've forgotten to update.
+
+===============================
+
+Version 1.0.1.4:
++Re-designed the site a little bit, and arranged some things using the <table> method.
++Changed the shop item "XP" to "XP (1XP costs - 5 Points)".
+
+===============================  
+
+Version 1.0.1.5:
++Added a new token system, which allows you to generate a token which, when it will be used,
+give you the amount of points you had when you generated the token!
+The generated token will contain all the points you earned in the current game,
+even if you spent some!
++Added a system to check if the game hasn't allready started when you activate a token.
++Added a system to check if the token is vailed.
+
+===============================
+
+Version 1.0.1.6:
++Fixed a bug in the token system (Can't be explained here).
++Added a new system to the token system, a password system.
++Added a new system to check if you entered the password you had entered when you had 
+generated the token, when you activate a token.
++The egg dissapears now when you crack it.
+
+===============================
+
+Version 1.0.1.7:
++Minor change in the token system to increase its security.
++Fixed a bug where you could enter and choose a password with a floating point. 
+
+===============================
+
+Version 1.0.1.8:
++Minor changes in the token system.
++Fixed a bug where tokens from older versions worked with version 1.0.1.7 and gave a higher
+amount of points than the amount they should've given.
++Changed the help page, so it would match the current version.
++Changed the token's password system, now you can only have a password with a maximum amount
+of 10 numbers.
++Expanded the generated token field.
+
+===============================	
+
+Version 1.0.1.9:
++Changed the mouse into a custom mouse special for the Egg game.
++The egg flashes now when you press on it.
++Added a system to check if the password you've chosen starts with zero, and if it does,
+to present an error alert. (Same for when you type a password when you're activating a token).
++Changed the alerts when you activate a token.
+Now if either the token or the password are invalid, it just show the same alert for them
+both ("Invalid password or token!").
+
+===============================
+
+Version 1.0.2.0:
++Added an achievements' system.
+
+===============================
+
+Version 1.0.2.1:
++Fixed a bug in the achievements' system which caused a points' bonus being given even after
+you have allready earned the achievement once.
++Changed the way you can see information about an achievement by adding an "Info" button.
++Centerized the list of achievements.
++Added a new achievement, "Big spender".
++Fixed a grammer mistake.
++Added a message that tells you for how many points the token you generated is.
++Added a message that tells you for how many points the token you activated is.
+
+===============================
+
+Version 1.0.2.2:
++Fixed a main bug when the points you earned from getting achievements, ranks or cracking eggs weren't added to the total points earned in the game.
++Fixed a bug when you could not earn any achievement.
++Added a "Reset progress" button.
+
+===============================

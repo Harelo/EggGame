@@ -1,0 +1,186 @@
+<html>
+<!--All rights reserved to Harel Danieli, the maker of this game.-->
+<head>
+    <title>Crack the egg!</title>
+</head>
+<body bgcolor="#A9E2F3">
+    <style>
+        body {
+            cursor: url(./EggCur.cur);
+        }
+
+        #default {
+            font-size: 14px;
+            color: #A9E2F3;
+            background: #0040FF;
+            border: #0040FF;
+        }
+
+        select.loly {
+            border: #0040FF;
+        }
+
+        Option.selecty {
+            width: #A9E2F3;
+            background-color: #0040FF;
+            color: #A9E2F3;
+        }
+
+        select.achievements {
+            border: #0040FF;
+        }
+
+        Option.ach {
+            width: #A9E2F3;
+            background-color: #0040FF;
+            color: #A9E2F3;
+        }
+    </style>
+    <center>
+<div style="font-family:Cooper Black; font-size: 25pt; color: white;">
+Egg &copy - the Egg game!
+</div>
+<br>
+<input type="image" src="eggy.png" name="color" style="height: 130px; width: 100px; border: #00000;" onClick="hit()">
+<br>
+<br>
+<table>
+<tr>
+<font color="#0404B4" size="4px">Clicks left:</font>
+<input type="text" readonly name="count" value="1000000" size="5">
+</tr>
+<br>
+<tr>
+<font color="#0404B4" size="4px">Points:</font>
+<input type="text" readonly name="points" value="0" size="10">
+</tr>
+<br>
+<tr>
+<font color="#0404B4" size="4px">Eggs opened:</font>
+<input type="text" readonly name="eggs" value="0">
+</tr>
+<br>
+<tr>
+<font color="#0404B4" size="4px">Activated item:</font>
+<input type="text" name="itemact" readonly>
+</tr>
+<br>
+<br>
+<input type="button" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';" value="Start another egg!" id="default" onClick="reset()">
+</center>
+    <script src="EggData.js">
+    </script>
+    <br>
+    <br>
+    <center>
+<table border="1" bordercolor="navy">
+<tr>
+<td>
+<center>
+<u><h1>Shop</h1></u>
+<select name="items" class="loly" size="6">
+<option class="selecty" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';" value="item7">XP (1XP Costs - 5 Points)</option>
+<option class="selecty" value="item1" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';">Hit x3 - 100,000 Points</option>
+<option class="selecty" value="item2" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';">Hit x5 - 250,000 Points</option>
+<option class="selecty" value="item3" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';">Hit x10 - 1,000,000 Points</option>
+<option class="selecty" value="item4" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';">Points x2 - 100,000 Points</option>
+<option class="selecty" value="item5" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';">Points x5 - 500,000 Points</option>
+<option class="selecty" value="item6" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';">Crack one egg - 1,000,000 Points</option>
+</select>
+<br>
+<input type="button" value="Buy" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';" id="default" onClick="purchase()">
+</center>
+</td>
+<td>
+<center>
+<u><h1>Rank:</h1></u>
+<font color="#0404B4" size="4px">XP left for rankup:</font>
+<input type="text" name="rankup" value="10000" readonly>
+<br>
+<font color="#0404B4" size="4px">Rank:
+</font><input type="text" name="rank" readonly value="Begginer">
+</center>
+</td>
+<td>
+<center>
+<u><h1>Your items:</h1></u>
+<select id="myitems" size="3" onChange="doamount()" onMouseDown="doamount()">
+</select>
+<br>
+<font color="#0404B4" size="4px">
+Amount:
+</font>
+<br>
+<input type="text" readonly name="amoun" value="0">
+<br>
+<input type="button" value="Activate" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';" id="default" onClick="activate()">
+</td>
+<td>
+<center>
+<u><h1>Achievements:</h1></u>
+<select name="achievements" id="achievements" class="achievements" size="6">
+<option value="1"  class="ach" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';">Begginer</option>
+<option value="2"  class="ach" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';">Pro Cracker</option>	
+<option value="3"  class="ach" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';">Mega Cracker</option>
+<option value="4"  class="ach" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';">No-lifer</option>
+<option value="5"  class="ach" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';">XP'er</option>	
+<option value="6"  class="ach" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';">XP Collector</option>	
+<option value="7"  class="ach" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';">XP Hunter</option>
+<option value="8"  class="ach" onMouseover="this.style.color= '#74DF00';" onMouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onMousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';">Big spender</option>
+</select>
+<br>
+<br>
+    <input type="button" onClick="achinfo()" value="Info" onmouseover="this.style.color= '#74DF00';" onmouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onmousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';" id="default">
+</td>
+</tr>
+</center>
+    </table>
+    <br>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <font color="#0404B4" size="4px">
+Token:
+</font>
+            <input type="text" name="datok" readonly size="80">
+        </tr>
+        <br>
+        <tr>
+            <input type="button" onclick="maketok()" value="Generate a token" onmouseover="this.style.color= '#74DF00';" onmouseout="this.style.border= '#0040FF', this.style.color= 'A9E2F3', this.style.background= '#0040FF';" onmousedown="this.style.border= '#2E64FE', this.style.background= '#2E64FE';" id="default">
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <font color="#0404B4" size="4px">
+<a href="javascript:viewstats()">View stats</a>
+</font>
+    <br>
+    <font color="#0404B4" size="4px">
+---------------------------------------------------------------------
+</font>
+    <br>
+    <font color="#0404B4" size="4px">
+<a href="EggHelp.html">Help</a> | <a href="EggAbout.html">About</a> | <a href="javascript:token()">Activate Token</a>
+<br>
+<br>
+&copy Game developed and created by Harel Danieli. All rights reserved.
+<br>
+Version 1.0.2.1
+</font>
+    <script>
+        var message = "Sorry, right-click has been disabled";
+        function clickIE() { if (document.all) { (message); return false; } }
+        function clickNS(e) {
+            if 
+(document.layers || (document.getElementById && !document.all)) {
+                if (e.which == 2 || e.which == 3) { (message); return false; }
+            }
+        }
+        if (document.layers)
+        { document.captureEvents(Event.MOUSEDOWN); document.onmousedown = clickNS; }
+        else { document.onmouseup = clickNS; document.oncontextmenu = clickIE; }
+        document.oncontextmenu = new Function("return false")
+    </script>
+</html>
