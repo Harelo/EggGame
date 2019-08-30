@@ -1,4 +1,4 @@
-EGG (C) - VERSION'S INFORMATION
+EGG - VERSION'S INFORMATION
 -------------------------------
 
 ===============================
